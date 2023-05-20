@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "Name": "Ali Konnors",
+        "title": "Brunch this weekend?",
+        "Avatar": "https://cdn.vuetifyjs.com/images/lists/1.jpg",
+        "ubTitle": " - I'll be in your neighborhood doing errands this weekend. Do you want to hang out?",
+        "country": "Russia",
+        "point": "< 20"
+    },
+    {
+        "id": 2,
+        "Name": "to Alex, Scott, Jennifer",
+        "title": "Summer BBQ",
+        "Avatar": "https://cdn.vuetifyjs.com/images/lists/2.jpg",
+        "ubTitle": " - Wish I could come, but I'm out of town this weekend.",
+        "country": "Usa",
+        "point": "< 10"
+    },
+    {
+        "id": 3,
+        "Name": "Sandra Adams",
+        "title": "Oui oui",
+        "Avatar": "https://cdn.vuetifyjs.com/images/lists/3.jpg",
+        "ubTitle": " - Do you have Paris recommendations? Have you ever been?",
+        "country": "Russia",
+        "point": "< 20"
+    },
+    {
+        "id": 4,
+        "Name": "Trevor Hansen",
+        "title": "Birthday gift",
+        "Avatar": "https://cdn.vuetifyjs.com/images/lists/4.jpg",
+        "ubTitle": " - Have any ideas about what we should get Heidi for her birthday?",
+        "country": "Russia",
+        "point": "< 10"
+    },
+    {
+        "id": 5,
+        "Name": "Britta Holt",
+        "title": "Recipe to try",
+        "Avatar": "https://cdn.vuetifyjs.com/images/lists/5.jpg",
+        "ubTitle": " - We should eat this: Grate, Squash, Corn, and tomatillo Tacos.",
+        "country": "Usa",
+        "point": "< 20"
+    }
+]
