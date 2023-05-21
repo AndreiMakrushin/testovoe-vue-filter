@@ -40,7 +40,7 @@ const isEqual = (result, b) => {
   }
   return true
 }
-
+// еслит значение уникально, делаем push
 const unique = (result) => {
   let isAdded,
     arr = []

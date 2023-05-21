@@ -1,12 +1,20 @@
 <script setup>
+import { ref } from 'vue'
 import { useUsersStore } from '../stores/users'
 
 const userAll = useUsersStore()
+
+const secretInfo = ref(0)
 </script>
 <template>
   <div class="cards">
     <span class="header">List</span>
-    <div class="card" v-for="user in userAll.userAll" :key="user.id">
+    <div
+      class="card"
+      v-for="user in userAll.userAll"
+      :key="user.id"
+      @click="secretInfo = `${user.id}`"
+    >
       <div class="image">
         <img :src="user.Avatar" />
       </div>
@@ -14,10 +22,22 @@ const userAll = useUsersStore()
         <h3>{{ user.title }}</h3>
         <strong>{{ user.Name }}</strong> {{ user.ubTitle }}
       </div>
+      <div class="shadow" v-if="user.id == secretInfo">
+        Возраст: {{ user.secret.age }} Количество Детей: {{ user.secret.children }}
+      </div>
     </div>
   </div>
 </template>
 <style scoped>
+.shadow {
+  position: relative;
+  z-index: 9;
+  box-shadow: 0px 3px 1px -2px rgba(165, 155, 155, 0.2), 0px 2px 2px 0px rgba(97, 91, 91, 0.14),
+    0px 1px 5px 0px rgba(121, 114, 114, 0.12);
+  display: flex;
+  text-align: center;
+  height: 100%;
+}
 .cards {
   max-width: 450px;
   margin-bottom: 40px;
@@ -49,6 +69,7 @@ img {
   width: 100%;
 }
 .title {
+  z-index: 1;
   padding-bottom: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   color: rgba(0, 0, 0, 0.6);
