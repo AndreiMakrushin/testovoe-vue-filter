@@ -46,8 +46,8 @@ const unique = (result) => {
     arr = []
 
   for (let i = 0; i < result.length; i++) {
-    isAdded = arr.some((v) => {
-      return isEqual(v, result[i])
+    isAdded = arr.some((uniqu) => {
+      return isEqual(uniqu, result[i])
     })
     if (!isAdded) {
       arr.push(result[i])
@@ -90,6 +90,9 @@ let people = unique(result)
 </template>
 
 <style scoped>
+:deep(.p-dropdown-label) {
+  width: 300px;
+}
 .select {
   padding-bottom: 25px;
 }

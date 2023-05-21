@@ -6,12 +6,13 @@ const date = ref(new Date().getFullYear())
 <template>
   <div>
     <div class="footer-container">
-      <div class="footer">{{ date }} - <strong>Ant Design Vue</strong></div>
+      <div class="footer">{{ date }} - <strong>PRIMEVUE</strong></div>
     </div>
   </div>
 </template>
 <style scoped>
 .footer-container {
+  position: absolute;
   display: flex;
   width: 100vw;
   justify-content: center;

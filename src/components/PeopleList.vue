@@ -9,26 +9,34 @@ const secretInfo = ref(0)
 <template>
   <div class="cards">
     <span class="header">List</span>
-    <div
-      class="card"
-      v-for="user in userAll.userAll"
-      :key="user.id"
-      @click="secretInfo = `${user.id}`"
-    >
-      <div class="image">
-        <img :src="user.Avatar" />
-      </div>
-      <div class="title">
-        <h3>{{ user.title }}</h3>
-        <strong>{{ user.Name }}</strong> {{ user.ubTitle }}
-      </div>
-      <div class="shadow" v-if="user.id == secretInfo">
-        Возраст: {{ user.secret.age }} Количество Детей: {{ user.secret.children }}
-      </div>
-    </div>
+    <TransitionGroup name="list" tag="ui">
+      <li v-for="user in userAll.userAll" :key="user.id" @click="secretInfo = `${user.id}`">
+        <div class="card">
+          <div class="image">
+            <img :src="user.Avatar" />
+          </div>
+          <div class="title">
+            <h3>{{ user.title }}</h3>
+            <strong>{{ user.Name }}</strong> {{ user.ubTitle }}
+          </div>
+          <div class="shadow" v-if="user.id == secretInfo">
+            Возраст: {{ user.secret.age }} Количество Детей: {{ user.secret.children }}
+          </div>
+        </div>
+      </li>
+    </TransitionGroup>
   </div>
 </template>
 <style scoped>
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.3s ease;
+}
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
 .shadow {
   position: relative;
   z-index: 9;
@@ -39,10 +47,13 @@ const secretInfo = ref(0)
   height: 100%;
 }
 .cards {
+  max-height: 700px;
+  overflow: scroll;
   max-width: 450px;
   margin-bottom: 40px;
   box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%),
     0px 1px 5px 0px rgb(0 0 0 / 12%);
+  transition: 0.5s;
 }
 .header {
   align-items: center;
@@ -67,6 +78,9 @@ const secretInfo = ref(0)
 }
 img {
   width: 100%;
+}
+li {
+  list-style: none;
 }
 .title {
   z-index: 1;
