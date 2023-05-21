@@ -30,31 +30,8 @@ arrCountry.forEach((item) => {
   })
 })
 //Проверка на уникальность
-const isEqual = (result, b) => {
-  let prop
-  for (prop in result) {
-    if (result[prop] !== b[prop]) return false
-  }
-  for (prop in b) {
-    if (b[prop] !== result[prop]) return false
-  }
-  return true
-}
-// еслит значение уникально, делаем push
-const unique = (result) => {
-  let isAdded,
-    arr = []
+const unique = (result) => [...new Set(result.map(JSON.stringify))].map(JSON.parse)
 
-  for (let i = 0; i < result.length; i++) {
-    isAdded = arr.some((uniqu) => {
-      return isEqual(uniqu, result[i])
-    })
-    if (!isAdded) {
-      arr.push(result[i])
-    }
-  }
-  return arr
-}
 let people = unique(result)
 </script>
 
