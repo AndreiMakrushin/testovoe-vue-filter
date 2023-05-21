@@ -13,7 +13,6 @@ export const useUsersStore = defineStore('users', () => {
     userAll.value = data.filter((user)=> 
       user.country.includes(country.value) && user.point.includes(points.value)
     )
-
   })
   
   return { userAll, country, points }
