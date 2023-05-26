@@ -22,7 +22,7 @@ const uniqueArr = users.userAll.reduce((acc, cur) => {
   }
   return acc
 }, [])
-
+console.log(uniqueArr);
 const people = uniqueArr
 </script>
 
