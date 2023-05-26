@@ -14,10 +14,10 @@ watch(selectedCountry, () => {
 watch(selectedPoints, () => {
   users.points = selectedPoints.value.point
 })
-const arrCountry = users.userAll.map((item) => {
+
+const arrCountry = users.filteredUsers.map((item) => {
   return { country: item.country, points: item.point }
 })
-
 const result = []
 
 arrCountry.forEach((item) => {
@@ -39,11 +39,9 @@ let people = unique(result)
       <div class="p-float-label">
         <Dropdown
           v-model="selectedCountry"
-          inputId="dd-city"
           :options="people"
           optionLabel="country"
           placeholder="Выберите страну"
-          class="w-full md:w-14rem"
         />
         <label for="dd-city">Выберите страну</label>
       </div>
@@ -52,11 +50,9 @@ let people = unique(result)
       <div class="p-float-label">
         <Dropdown
           v-model="selectedPoints"
-          inputId="dd-city"
           :options="people"
           optionLabel="point"
           placeholder="Выберите количество баллов"
-          class="w-full md:w-14rem"
         />
         <label for="dd-city">Выберите количество баллов</label>
       </div>

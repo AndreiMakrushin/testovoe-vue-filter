@@ -10,7 +10,7 @@ const secretInfo = ref(0)
   <div class="cards">
     <span class="header">List</span>
     <TransitionGroup name="list" tag="ui">
-      <li v-for="user in userAll.userAll" :key="user.id" @click="secretInfo = `${user.id}`">
+      <li v-for="user in userAll.filteredUsers" :key="user.id" @click="secretInfo = `${user.id}`">
         <div class="card">
           <div class="image">
             <img :src="user.Avatar" />
