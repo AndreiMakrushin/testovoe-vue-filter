@@ -14,16 +14,23 @@ watch(selectedCountry, () => {
 watch(selectedPoints, () => {
   users.points = selectedPoints.value.point
 })
+const arrCountry = users.userAll.map((item) => {
+  return { country: item.country, points: item.point }
+})
 
-const uniqueArr = users.userAll.reduce((acc, cur) => {
-  if (!acc.some((item) => item.country === cur.country && item.point === cur.point)) {
-    acc.push({ country: cur.country })
-    acc.push({ point: cur.point })
-  }
-  return acc
-}, [])
-console.log(uniqueArr);
-const people = uniqueArr
+const result = []
+
+arrCountry.forEach((item) => {
+  result.push({
+    country: item.country
+  })
+  result.push({
+    point: item.points
+  })
+})
+const unique = (result) => [...new Set(result.map(JSON.stringify))].map(JSON.parse)
+
+let people = unique(result)
 </script>
 
 <template>
