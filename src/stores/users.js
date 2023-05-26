@@ -1,4 +1,4 @@
-import { ref, watchEffect } from 'vue'
+import { ref, watchEffect, computed } from 'vue'
 import { defineStore } from 'pinia'
 import data from '../data/data.json'
 
